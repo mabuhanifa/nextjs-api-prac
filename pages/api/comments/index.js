@@ -6,7 +6,7 @@ export default function handler(req, res) {
     res.status(200).json(comments);
   }
    else if (req.method === "POST") {
-    const comment = req.body.comments;
+    const comment = req.body.comment;
     const newComment = {
       id: comments.length + 1,
       text: comment,

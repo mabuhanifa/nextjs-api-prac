@@ -10,12 +10,12 @@ function CommentsPage() {
   };
 
   const submitComment = async () => {
-    const res = await fetch("http://localhost:3000/api/comments", {
+    const response = await fetch("http://localhost:3000/api/comments", {
       method: "POST",
       body: JSON.stringify({ comment }),
       headers: { "Content-Type": "application/json" },
     });
-    const data = await res.json();
+    const data = await response.json();
     console.log(data);
   };
 
@@ -34,6 +34,7 @@ function CommentsPage() {
         comments.map((c) => (
           <div key={c.id}>
             <h2>{c.text}</h2>
+            <h2>{c.id}</h2>
           </div>
         ))}
     </div>
