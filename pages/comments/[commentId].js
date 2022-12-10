@@ -2,7 +2,7 @@ import React from "react";
 import { comments } from "../../data/comments";
 
 export default function Comment({ comment }) {
-  return <div>{comment.id}</div>;
+  return <h1>{comment.text}</h1>;
 }
 
 export async function getStaticPaths() {
@@ -17,7 +17,8 @@ export async function getStaticPaths() {
 }
 
 
-export async function getStaticProps({ params: commentId }) {
+export async function getStaticProps({ params: {commentId} }) {
+    console.log(commentId);
     const comment = comments.find(({ id }) => id === parseInt(commentId));
     console.log(comment);
     return {
