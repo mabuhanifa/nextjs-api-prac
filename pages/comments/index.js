@@ -17,11 +17,15 @@ function CommentsPage() {
     });
     const data = await response.json();
     console.log(data);
+    fetchComments();
   };
   const deleteComment = async (commentId) => {
-    const response = await fetch(`http://localhost:3000/api/comments/${commentId}`, {
-      method: "DELETE",
-    });
+    const response = await fetch(
+      `http://localhost:3000/api/comments/${commentId}`,
+      {
+        method: "DELETE",
+      }
+    );
     const data = await response.json();
     console.log(data);
     fetchComments();
