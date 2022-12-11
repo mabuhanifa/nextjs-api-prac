@@ -6,7 +6,7 @@ export default function About() {
     <div>
       <h3>About Page</h3>
       {[1, 2, 3, 4, 5, 6].map((i) => (
-        <div key={i} style={{margin:"50px" }}>
+        <div key={i} style={{ margin: "50px" }}>
           <Image src={`/${i}.avif`} alt="img" width="280" height="400" />
         </div>
       ))}
